@@ -1,0 +1,12 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: jaeger-agent
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    from:
+      kind: DockerImage
+      name: jaeger/jaeger-agent
+    name: "latest"
